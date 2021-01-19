@@ -4,9 +4,72 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Weather Forecaster</title>
-	<!--<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	<style type="text/css">
-		
+		html,body{
+			background-color: #000;
+			font-family: 'PT Sans', sans-serif;
+		}
+
+		.container{
+			width: 75%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.list-item{
+			list-style-type: none;
+			padding: 10px;
+			font-size: 1.2rem;			
+		}
+
+		.body{
+			border:1px solid black;
+			border-radius: 2.5%;
+			width: 50%;
+			margin: auto;
+			color: #fff;
+			background-color: #166659;
+		}
+		.wrapper{
+			margin-bottom: 04%;
+		}
+
+		.cityname{
+			font-size: 1.8rem;
+		}
+
+		#button{
+			color: #f4f4f4;
+			background-color: #f26d00;
+			border:0;
+			padding: 0.5%;
+			border-radius: 7%;
+		}
+
+		#button:hover{
+			cursor: pointer;
+		}
+
+		@media only screen and (max-width: 768px){
+			.container{
+				width: 100%;
+			}
+		}
+
+		@media only screen and (max-width: 425px){
+			.body{
+				width: 85%;
+			}
+		}
+
+		@media only screen and (max-width: 280px){
+			#button{
+				display: block;
+				margin: 20px auto auto auto;
+			}
+		}
 	</style>
 </head>
 <body>

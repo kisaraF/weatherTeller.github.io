@@ -19,9 +19,8 @@ function doThis() {
 	fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${key}&units=metric`).then((res) => {
 		return res.json()
 	}).then((data) => {
-		console.log(data);
+		//console.log(data);
 		const country = data.sys.country;
-		const desc = data.weather[0].main;
 		const subDesc= data.weather[0].description;
 		const icon = data.weather[0].icon;
 		const cityName= data.name;
@@ -35,11 +34,13 @@ function doThis() {
 
 		display.innerHTML = `
 			<div class='body'>
-			<img src='http://openweathermap.org/img/wn/${icon}@2x.png'>
-				<ul>
-					<li class='list-item'>City : ${cityName}</li>
-					<li class='list-item'>Country : ${country}</li>
-					<li class='list-item'>Condition : ${desc} , ${subDesc}</li>
+			<div>
+				<h2>
+			</div>			
+				
+					<li class='list-item'><span class='cityname'><strong>${cityName}</strong></span> <span>${country}</span></li>
+					<li class='list-item'>${subDesc}</li>
+					<li class='list-item'><img src='http://openweathermap.org/img/wn/${icon}@2x.png'></li>					
 					<li class='list-item'>Temperature : ${temp}<span>&#8451;</span></li>
 					<li class='list-item'>Wind Speed : ${windSpeed}<span>meter/sec</span></li>
 					<li class='list-item'>Wind Direction : ${windDirection}<span>&#176;</span></li>
@@ -47,11 +48,12 @@ function doThis() {
 					<li class='list-item'>Pressure : ${pressure}hPa </li>
 					<li class='list-item'>Sunrise : ${sunrise} </li>
 					<li class='list-item'>Sunset : ${sunset} </li>
-				</ul>
+				
 			</div>
 		`
 
 	}).catch((err) => {
 		console.log('Wrong Typing Son')
 	})
+	input.value='';
 }
